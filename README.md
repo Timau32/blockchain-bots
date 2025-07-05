@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+## Стек технологий
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- React
+- TypeScript
+- Scss modules
+- Axios
+- FSD
+- Ant Design
+- json-server-auth
 
-## Available Scripts
+## Структура проекта (FSD)
 
-In the project directory, you can run:
+<pre lang="markdown">
+src/
+├── app/                    # Точка входа, глобальные стили, маршруты
+│   ├── entrypoint/         # Главный index.tsx (рендер React-приложения)
+│   ├── routes/             # Основной компонент маршрутизации
+│   └── styles/             # Глобальные SCSS-стили
+│
+├── entities/               # Базовые сущности приложения (боты и др.)
+│   └── bots/               # Интерфейсы и UI компонентов ботов (BotCard)
+│
+├── features/               # Бизнес-логика, интерактивные формы, API
+│   ├── bots/               # CRUD по ботам: формы, модалки, список
+│   ├── loginForm/          # Форма логина, API и типы
+│   ├── registerForm/       # Форма регистрации, API и типы
+│   └── statistics/         # Отображение статистики прибыли по ботам
+│
+├── pages/                  # Страницы маршрутов (Login, Register, Bots)
+│   ├── bots/               # Страницы для списка и создания ботов
+│   ├── login/              # Страница логина
+│   ├── register/           # Страница регистрации
+│   ├── statistics/         # Страница статистики
+│   └── NotFound/           # 404 страница
+│
+├── shared/                 # Общие утилиты, API-инстансы, стили, модели
+│   ├── api/                # Axios-инстанс
+│   ├── lib/                # Работа с cookie
+│   ├── models/             # Общие интерфейсы: токены, пользователь
+│   ├── config/             # Конфигурации окружения
+│   └── ui/                 # Общие UI-элементы (например, Container)
+│
+├── widgets/                # Независимые крупные компоненты
+│   └── Navbar/             # Верхняя навигация
+│
+├── index.tsx               # Точка входа в React-приложение
+├── reportWebVitals.ts      # Аналитика производительности
+└── react-app-env.d.ts      # CRA-специфичный файл типов
+</pre>
 
-### `npm start`
+<pre lang="markdown"> ```bash npm install npm run dev ``` </pre>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Установка и запуск проекта
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Клонирование репозитория
 
-### `npm test`
+<pre lang="markdown"> 
+git clone https://github.com/Timau32/blockchain-bots.git
+cd blockchain-bots
+</pre>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Установка зависимостей
 
-### `npm run build`
+<pre lang="markdown"> 
+cd blockchain-bots
+npm install
+</pre>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Настройка .env файлов
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Создайте .env в папке blockchain-bots/:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+REACT_APP_API_URL=http://localhost:3001
 
-### `npm run eject`
+## Запуск Мок-сервера (json-server-auth):
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<pre lang="markdown"> 
+npm run start:api
+</pre>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Запуск проекта
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<pre lang="markdown"> 
+npm start
+</pre>

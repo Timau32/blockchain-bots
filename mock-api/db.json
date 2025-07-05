@@ -1,0 +1,223 @@
+{
+  "users": [
+    {
+      "email": "john_doe",
+      "password": "password",
+      "id": 1
+    },
+    {
+      "email": "Tima@test.ru",
+      "password": "$2a$10$9OkFZ1nr8sFfg6Aja2CgFuTzS.Yedjhd6Jo.cOok6slkFKRN4hwp2",
+      "id": 2
+    },
+    {
+      "email": "timatest@gmail.com",
+      "password": "$2a$10$B3bxYvHhnRYHGKRleba/pekkixJBwEZsOjtDr9ghUmVCr3YiMSp02",
+      "id": 3
+    },
+    {
+      "id": 1751630088660,
+      "email": "tim2atest@gmail.com",
+      "password": "$2b$10$zH4lERkivwEb57ZDpipMc.XsAzd20xaJDN/1Dmk6wrLQkwhTuQZDW"
+    },
+    {
+      "id": 1751632506067,
+      "email": "test@gmail.com",
+      "password": "$2b$10$rt.5WG6W67OdCRgmp8jF3OSVSt/PM6Z/uyhPR6s70FJws.p9SFj62"
+    }
+  ],
+  "bots": [
+    {
+      "id": "1",
+      "name": "BTC Grid Bot",
+      "status": "ACTIVE",
+      "symbol": "BTC/USDT",
+      "deposit": 1000,
+      "profit_percentage": 0.5,
+      "num_orders": 10,
+      "grid_length": 5,
+      "userId": 1
+    },
+    {
+      "id": "2",
+      "name": "ETH Grid Bot",
+      "status": "PAUSE",
+      "symbol": "ETH/USDT",
+      "deposit": 500,
+      "profit_percentage": 0.3,
+      "num_orders": 8,
+      "grid_length": 3,
+      "userId": 1
+    },
+    {
+      "id": "3",
+      "name": "XRP Bot",
+      "status": "ERROR",
+      "symbol": "XRP/USDT",
+      "deposit": 300,
+      "profit_percentage": 1,
+      "num_orders": 5,
+      "grid_length": 10,
+      "userId": 1
+    },
+    {
+      "id": "4",
+      "name": "LTC Scalp Bot",
+      "status": "ACTIVE",
+      "symbol": "LTC/USDT",
+      "deposit": 750,
+      "profit_percentage": 0.7,
+      "num_orders": 6,
+      "grid_length": 4,
+      "userId": 1
+    },
+    {
+      "id": "5",
+      "name": "BNB Bot",
+      "status": "PAUSE",
+      "symbol": "BNB/USDT",
+      "deposit": 1200,
+      "profit_percentage": 0.4,
+      "num_orders": 9,
+      "grid_length": 6,
+      "userId": 1
+    },
+    {
+      "id": "6",
+      "name": "SOL Trend Bot",
+      "status": "ACTIVE",
+      "symbol": "SOL/USDT",
+      "deposit": 850,
+      "profit_percentage": 0.6,
+      "num_orders": 7,
+      "grid_length": 5,
+      "userId": 1
+    },
+    {
+      "id": "7",
+      "name": "ADA Grid Bot",
+      "status": "ERROR",
+      "symbol": "ADA/USDT",
+      "deposit": 400,
+      "profit_percentage": 0.2,
+      "num_orders": 4,
+      "grid_length": 3,
+      "userId": 1
+    },
+    {
+      "id": "8",
+      "name": "DOT Range Bot",
+      "status": "ACTIVE",
+      "symbol": "DOT/USDT",
+      "deposit": 650,
+      "profit_percentage": 0.9,
+      "num_orders": 6,
+      "grid_length": 7,
+      "userId": 1
+    },
+    {
+      "id": "9",
+      "name": "AVAX Bot",
+      "status": "PAUSE",
+      "symbol": "AVAX/USDT",
+      "deposit": 700,
+      "profit_percentage": 0.8,
+      "num_orders": 5,
+      "grid_length": 6,
+      "userId": 1
+    },
+    {
+      "name": "Test status Coin",
+      "symbol": "TWR/TEST",
+      "deposit": 1231,
+      "profit_percentage": 3,
+      "num_orders": 33,
+      "grid_length": 3,
+      "status": "ERROR",
+      "id": "NXRKda-"
+    }
+  ],
+  "stats": [
+    {
+      "id": "1",
+      "name": "BTC Grid Bot",
+      "symbol": "BTC/USDT",
+      "cycles_completed": 15,
+      "deposit_usdt": 1000,
+      "profit_usdt": 50,
+      "profit_percentage": 5
+    },
+    {
+      "id": "2",
+      "name": "ETH Grid Bot",
+      "symbol": "ETH/USDT",
+      "cycles_completed": 8,
+      "deposit_usdt": 500,
+      "profit_usdt": 10,
+      "profit_percentage": 2
+    },
+    {
+      "id": "3",
+      "name": "XRP Bot",
+      "symbol": "XRP/USDT",
+      "cycles_completed": 4,
+      "deposit_usdt": 300,
+      "profit_usdt": -5,
+      "profit_percentage": -1.67
+    },
+    {
+      "id": "4",
+      "name": "LTC Scalp Bot",
+      "symbol": "LTC/USDT",
+      "cycles_completed": 10,
+      "deposit_usdt": 750,
+      "profit_usdt": 30,
+      "profit_percentage": 4
+    },
+    {
+      "id": "5",
+      "name": "BNB Bot",
+      "symbol": "BNB/USDT",
+      "cycles_completed": 12,
+      "deposit_usdt": 1200,
+      "profit_usdt": 60,
+      "profit_percentage": 5
+    },
+    {
+      "id": "6",
+      "name": "SOL Trend Bot",
+      "symbol": "SOL/USDT",
+      "cycles_completed": 7,
+      "deposit_usdt": 850,
+      "profit_usdt": 40,
+      "profit_percentage": 4.7
+    },
+    {
+      "id": "7",
+      "name": "ADA Grid Bot",
+      "symbol": "ADA/USDT",
+      "cycles_completed": 3,
+      "deposit_usdt": 400,
+      "profit_usdt": -8,
+      "profit_percentage": -2
+    },
+    {
+      "id": "8",
+      "name": "DOT Range Bot",
+      "symbol": "DOT/USDT",
+      "cycles_completed": 9,
+      "deposit_usdt": 650,
+      "profit_usdt": 28,
+      "profit_percentage": 4.3
+    },
+    {
+      "id": "9",
+      "name": "AVAX Bot",
+      "symbol": "AVAX/USDT",
+      "cycles_completed": 6,
+      "deposit_usdt": 700,
+      "profit_usdt": 21,
+      "profit_percentage": 3
+    }
+  ]
+}
