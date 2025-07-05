@@ -48,7 +48,6 @@ src/
 └── react-app-env.d.ts      # CRA-специфичный файл типов
 </pre>
 
-<pre lang="markdown"> ```bash npm install npm run dev ``` </pre>
 
 ## Установка и запуск проекта
 
