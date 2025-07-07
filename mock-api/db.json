@@ -130,7 +130,7 @@
       "name": "Test status Coin",
       "symbol": "TWR/TEST",
       "deposit": 1231,
-      "profit_percentage": 3,
+      "profit_percentage": 7,
       "num_orders": 33,
       "grid_length": 3,
       "status": "ERROR",

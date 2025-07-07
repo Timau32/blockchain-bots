@@ -7,11 +7,6 @@ import { statusesEnum } from '@/entities/bots/model/IBot';
 import { createBot } from '../../api/bots';
 import type { createBotPayloadType } from '../../model/CreateBotPayload';
 
-const statusOptions = Object.values(statusesEnum).map(status => ({
-	label: status,
-	value: status,
-}));
-
 export const CreateBotForm = () => {
 	const [loading, setIsLoading] = useState(false);
 	const [form] = Form.useForm<createBotPayloadType>();
@@ -20,7 +15,7 @@ export const CreateBotForm = () => {
 	const handleSubmit = async (values: createBotPayloadType) => {
 		try {
 			setIsLoading(true);
-			await createBot(values);
+			await createBot({ ...values, status: statusesEnum.ACTIVE });
 			message.success(`Бот ${values.name} успешно создан!`);
 			form.resetFields();
 		} catch (error) {
@@ -101,17 +96,21 @@ export const CreateBotForm = () => {
 					<Form.Item
 						name="grid_length"
 						label="Длина сетки (%)"
-						rules={[{ required: true, type: 'number', min: 0, max: 100 }]}
+						rules={[
+							{ required: true, message: 'Пожалуйста, укажите длину сетки' },
+							{ type: 'number', min: 0, max: 100, message: 'Значение должно быть от 0 до 100' },
+						]}
 					>
 						<InputNumber
-							placeholder="5"
-							addonAfter="%"
+							min={0}
+							max={100}
 							style={{ width: '100%' }}
+							addonAfter="%"
 						/>
 					</Form.Item>
 				</Col>
 
-				<Col span={24}>
+				{/* <Col span={24}>
 					<Form.Item
 						name="status"
 						label="Статус бота"
@@ -122,18 +121,23 @@ export const CreateBotForm = () => {
 							options={statusOptions}
 						/>
 					</Form.Item>
-				</Col>
+				</Col> */}
 			</Row>
 
-			<Form.Item>
-				<Button
-					type="primary"
-					htmlType="submit"
-					loading={loading}
-					block
-				>
-					Создать бота
-				</Button>
+			<Form.Item shouldUpdate>
+				{() => (
+					<Button
+						type="primary"
+						htmlType="submit"
+						loading={loading}
+						block
+						disabled={
+							!form.isFieldsTouched(true) || !!form.getFieldsError().filter(({ errors }) => errors.length).length
+						}
+					>
+						Создать бота
+					</Button>
+				)}
 			</Form.Item>
 		</Form>
 	);

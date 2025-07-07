@@ -14,9 +14,10 @@ const StatisticsTablePure = ({ data }: StatisticsTableProps) => {
 			(acc, stat) => {
 				acc.deposit_usdt += stat.deposit_usdt;
 				acc.profit_usdt += stat.profit_usdt;
+				acc.cycles_completed += stat.cycles_completed;
 				return acc;
 			},
-			{ deposit_usdt: 0, profit_usdt: 0 },
+			{ deposit_usdt: 0, profit_usdt: 0, cycles_completed: 0 },
 		);
 
 		const totalProfitPercent =
@@ -26,7 +27,7 @@ const StatisticsTablePure = ({ data }: StatisticsTableProps) => {
 			id: 'total',
 			name: 'Итого',
 			symbol: '',
-			cycles_completed: 0,
+			cycles_completed: totalStats.cycles_completed,
 			deposit_usdt: totalStats.deposit_usdt,
 			profit_usdt: totalStats.profit_usdt,
 			profit_percentage: +totalProfitPercent.toFixed(2),

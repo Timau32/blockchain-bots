@@ -1,8 +1,8 @@
 import { Button, Col, Form, Input, InputNumber, Modal, Row, Select } from 'antd';
 import { useState } from 'react';
 
-import { IBot, statusesEnum } from '@/entities';
 import styles from './EditBotModal.module.scss';
+import { IBot, statusesEnum } from '@/entities';
 
 import { createBotPayloadType } from '../../model/CreateBotPayload';
 
@@ -10,13 +10,12 @@ interface Props {
 	open: boolean;
 	onClose: () => void;
 	initialValues: IBot;
-    loading: boolean;
-    onSubmit: (values: createBotPayloadType) => void;
+	loading: boolean;
+	onSubmit: (values: createBotPayloadType) => void;
 }
 
 export const EditBotModal = ({ open, onClose, initialValues, onSubmit, loading }: Props) => {
 	const [form] = Form.useForm<IBot>();
-
 
 	const statusOptions = Object.values(statusesEnum).map(status => ({
 		label: status,
@@ -29,8 +28,8 @@ export const EditBotModal = ({ open, onClose, initialValues, onSubmit, loading }
 			open={open}
 			onCancel={onClose}
 			footer={null}
-            onOk={form.submit}
-            loading={loading}
+			onOk={form.submit}
+			loading={loading}
 		>
 			<Form
 				form={form}
@@ -97,16 +96,21 @@ export const EditBotModal = ({ open, onClose, initialValues, onSubmit, loading }
 						<Form.Item
 							name="grid_length"
 							label="Длина сетки (%)"
-							rules={[{ required: true }]}
+							rules={[
+								{ required: true, message: 'Пожалуйста, укажите длину сетки' },
+								{ type: 'number', min: 0, max: 100, message: 'Значение должно быть от 0 до 100' },
+							]}
 						>
 							<InputNumber
+								min={0}
+								max={100}
 								style={{ width: '100%' }}
 								addonAfter="%"
 							/>
 						</Form.Item>
 					</Col>
 
-					<Col span={24}>
+					{/* <Col span={24}>
 						<Form.Item
 							name="status"
 							label="Статус бота"
@@ -114,18 +118,23 @@ export const EditBotModal = ({ open, onClose, initialValues, onSubmit, loading }
 						>
 							<Select options={statusOptions} />
 						</Form.Item>
-					</Col>
+					</Col> */}
 				</Row>
 
-				<Form.Item>
-					<Button
-						type="primary"
-						htmlType="submit"
-						block
-						loading={loading}
-					>
-						Сохранить изменения
-					</Button>
+				<Form.Item shouldUpdate>
+					{() => (
+						<Button
+							type="primary"
+							htmlType="submit"
+							block
+							loading={loading}
+							disabled={
+								!form.isFieldsTouched(true) || !!form.getFieldsError().filter(({ errors }) => errors.length).length
+							}
+						>
+							Сохранить изменения
+						</Button>
+					)}
 				</Form.Item>
 			</Form>
 		</Modal>
